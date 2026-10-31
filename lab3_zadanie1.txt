@@ -1,0 +1,14 @@
+Poniżej treść kolejnego zadania z zestawu zadań dotyczących opisu i tworzenia układów cyfrowych 
+w programie Logisim Evolution 5:
+
+M(a, b, c, d) = ((b' c) + (a' b d')) xor ((d ((a' + c)'))')
+
+Utwórz nowy układ o nazwie zadaniel. W programie Logisim-evolution narysuj schemat w taki
+sposób, by odpowiadał strukturze powyższego równania. Nie upraszczaj równania.
+Wypisz na kartce tablicę (tabelę) prawdy dla powyższego równania. Dodaj kolumny dla wszystkich
+wyników pośrednich oraz M. Przetestuj układ w programie Logisim-evolution dla wszystkich
+kombinacji wartości na wejściach. Sprawdź zgodność z tablicą prawdy.
+Posługując się wyznaczoną tablicą prawdy, opisz funkcję M w postaci wyrażeń SOP (suma
+mintermów) oraz POS (iloczyn makstermów).
+M = Lm(...) -wyrażenie boolowskie_; M = nw(...) =_wyrażenie boolowskie_
+Wyrażenia SOP i POS zapisz w sprawozdaniu.

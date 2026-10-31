@@ -1,0 +1,24 @@
+Poniżej treść kolejnego zadania 3 z zestawu zadań dotyczących opisu i tworzenia układów cyfrowych 
+w programie Logisim Evolution 5:
+
+Dodaj układ o nazwie grid4x4. Powinien on mieć jedno 4-bitowe wejście o nazwie T i żadnych wyjść.
+Zamiast wyjść, powinien mieć 16 diód RGBLED (szukaj ich w sekcji Input/Output w wersji Logisim-evolution),
+ułożonych w siatkę, jak pokazano na rysunku. Zwróć uwagę, że przewody siatki przechodzą bezpośrednio przez
+(pod) diodą, a przewody poziome i pionowe NIE są bezpośrednio połączone ze sobą. Najpierw ułóż przewody
+w siatkę, a następnie umieść diody RGBLED na każdym skrzyżowaniu. W tym układzie, każda dioda zmienia
+kolor na czerwony, gdy włączony jest jej przewód poziomy, na niebieski, gdy włączony jest jej przewód pionowy
+i na biały, gdy włączony jest zarówno przewód poziomy, jak i pionowy.
+
+Na przykład, jeśli wejście T jest 0000, to dioda 0 powinna zaświecić na biało (ten przykład jest pokazany na
+rysunku 1). (Wskazówka: możesz ponownie użyć dowolnego z układów, które już zbudowałeś bez kopiuj-wklej.
+Zamiast tego, po prostu wybierz poprzednio zbudowany układ z lewego panelu i umieść go wewnątrz nowego układu). 
+
+Wskazówka: ten układ jest znacznie łatwiejszy niż się wydaje, szczególnie jeśli wykorzystasz układy,
+które już zbudowałeś. Zauważ, na przykład, że wejścia dla kolumny zawierającej światła 8, 9, A, B zaczynają
+się od 10, więc gdy tylko wejście zaczyna się od 10, powinieneś włączyć przewód dla tej kolumny. Podobnie,
+wejścia dla najniższego rzędu świateł (3, 7, B, i F) wszystkie kończą się na 11, więc za każdym razem, gdy
+wejście kończy się na 11, powinieneś włączyć przewód dla tego rzędu.
+
+Układ posiada dodatkowe wejście (CLR). Jeżeli CLR = 0, to układ realizuje funkcję sterowania matrycą
+diod opisaną w zadaniu. Jeżeli CLR = 1, to wszystkie diody są zgaszone. W układzie nie może być
+więcej niż 8 bramek, liczba negatorów powinna być jak najmniejsza.

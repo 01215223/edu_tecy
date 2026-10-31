@@ -1,0 +1,24 @@
+Poniżej treść kolejnego zadania z zestawu zadań dotyczących opisu i tworzenia układów cyfrowych 
+w programie Logisim Evolution 5:
+
+Dodaj układ o nazwie display. Powinien on mieć jedno 2-bitowe wejście o nazwie A i żadnych wyjść. Za-
+miast wyjść powinien mieć element LED Matrix (folder Iput/Output). Zadaniem jest sprawienie, by matryca
+wyświetlała jeden z czterech możliwych wzorów, w zależności od wartości wejścia A. 
+W rozwiązaniu tego zadania należy przyjąć że jeśli wartość wejścia A wynosi
+00 to na matrycy wyświetlona jest litera "K",
+01 to na matrycy wyświetlona jest litera "U",
+10 to na matrycy wyświetlona jest litera "O"
+11 to na matrycy wyświetlona jest litera "N"  
+
+A = 00 ==> "K"
+A = 01 ==> "U"
+A = 10 ==> "O"
+A = 11 ==> "N"
+
+Każdy z tych wzorów to siatka 4x5 ledów, gdzie ”.” oznacza led wyłączony, a ”X” led włączony. W panelu
+właściwości u dołu po lewej stronie skonfiguruj matrycę LED tak, aby miała 4 kolumny i 5 wierszy (w sumie
+20 pikseli), a format wejścia (Input Format) ustaw na Rows lub Columns. Na krawędzi matrycy znajdują się
+przewody magistrali do sterowania wszystkimi 20 diodami. Podłącz je do rozgałęźników (splitter), aby mieć
+20 pojedynczych przewodów 1-bitowych zamiast 4 lub 5 magistral. Twoim zadaniem jest jak sterować tymi 20
+przewodami na podstawie wejścia A, aby na matrycy LED pojawiały się odpowiednie wzory
+Wzorce nie powinny być zbyt trywialne - w układzie powinno być przynajmniej kilka bramek.

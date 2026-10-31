@@ -1,0 +1,57 @@
+# bitscheck(A2, A1, A0) = R
+#
+# WARUNKI ZADANIA, KTORE PROWADZA DO TEGO ROZWIAZANIA
+#   1. Obwod ma jedno 3-bitowe wejscie A (rozbite na bity A2 A1 A0,
+#      A2 = MSB, A0 = LSB) i jedno 1-bitowe wyjscie R, wiec tablica
+#      ma 2^3 = 8 wierszy.
+#   2. R = 1 tylko wtedy, gdy A = 001 lub 100 lub 111
+#      (dziesietnie 1, 4, 7). Dla A = 0, 2, 3, 5, 6 jest R = 0.
+#   3. Obwod bedzie uzyty trzykrotnie w ukladzie input_check
+#      (dla wejsc X, Y, Z), wiec zwraca tylko informacje, czy dana
+#      wartosc nalezy do zbioru {001, 100, 111}. Wyjscia Rx, Ry, Rz
+#      sa potem wejsciami funkcji wiekszosciowej (T = 1, gdy co
+#      najmniej dwa z nich sa rowne 1).
+#
+# Uproszczenie:
+#   R = A2' A1' A0 + A2 A1' A0' + A2 A1 A0
+#   A2' A1' A0 + A2 A1' A0' = A1' (A2' A0 + A2 A0') = A1' (A2 xor A0)
+#   R = A1' (A2 xor A0) + A2 A1 A0
+#
+# Wyniki posrednie:
+#   w1 = A2 xor A0
+#   w2 = A1'
+#   w3 = w2 w1
+#   w4 = A2 A1 A0
+#   R  = w3 + w4
+#
+# Tabela z wynikami posrednimi (tylko informacyjnie):
+#   A2 A1 A0 | w1 w2 w3 w4 R
+#    0  0  0 |  0  1  0  0 0
+#    0  0  1 |  1  1  1  0 1
+#    0  1  0 |  0  0  0  0 0
+#    0  1  1 |  1  0  0  0 0
+#    1  0  0 |  1  1  1  0 1
+#    1  0  1 |  0  1  0  0 0
+#    1  1  0 |  1  0  0  0 0
+#    1  1  1 |  0  0  0  1 1
+#
+# 1) SOP (suma mintermow), R = Sigma m(1, 4, 7)
+#    R = A2'A1'A0 + A2A1'A0' + A2A1A0
+#
+# 2) POS (iloczyn makstermow), R = Pi M(0, 2, 3, 5, 6)
+#    R = (A2 + A1 + A0) (A2 + A1' + A0) (A2 + A1' + A0')
+#        (A2' + A1 + A0') (A2' + A1' + A0)
+#
+# Uwaga: zbior {001, 100, 111} jest symetryczny wzgledem odwrocenia
+# kolejnosci bitow, wiec R jest taka sama przy obu numeracjach bitow.
+#
+A2 A1 A0 | R
+~~~~~~~~~~~~~~~~~~
+0 0 0 | 0
+0 0 1 | 1
+0 1 0 | 0
+0 1 1 | 0
+1 0 0 | 1
+1 0 1 | 0
+1 1 0 | 0
+1 1 1 | 1

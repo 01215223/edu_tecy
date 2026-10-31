@@ -1,0 +1,55 @@
+# input_check(X, Y, Z) = T  -- tabela skrocona w oparciu o poduklad bitscheck
+#
+# WARUNKI ZADANIA, KTORE PROWADZA DO TEGO ROZWIAZANIA
+#   1. T = 1, gdy na dwoch lub trzech wejsciach X, Y, Z jest jedna z wartosci
+#      001, 100, 111.
+#   2. Sprawdzenie "czy wartosc nalezy do {001, 100, 111}" wykonuje bitscheck:
+#      Rx = bitscheck(X), Ry = bitscheck(Y), Rz = bitscheck(Z).
+#   3. Wyjscie T zalezy juz tylko od Rx, Ry, Rz, wiec zamiast 2^9 = 512
+#      wierszy wystarczy 2^3 = 8 wierszy (funkcja wiekszosciowa 2 z 3).
+#
+# Wyrazenia boolowskie:
+#   bitscheck(A) = A1' (A2 xor A0) + A2 A1 A0
+#
+# Wyniki posrednie:
+#   Rx = bitscheck(X)
+#   Ry = bitscheck(Y)
+#   Rz = bitscheck(Z)
+#   Q1 = Rx Ry
+#   Q2 = Rx Rz
+#   Q3 = Ry Rz
+#   T  = Q1 + Q2 + Q3
+#
+# Tabela z wynikami posrednimi (tylko informacyjnie):
+#   Rx Ry Rz | Q1 Q2 Q3 | T
+#    0  0  0 |  0  0  0 | 0
+#    0  0  1 |  0  0  0 | 0
+#    0  1  0 |  0  0  0 | 0
+#    0  1  1 |  0  0  1 | 1
+#    1  0  0 |  0  0  0 | 0
+#    1  0  1 |  0  1  0 | 1
+#    1  1  0 |  1  0  0 | 1
+#    1  1  1 |  1  1  1 | 1
+#
+# 1) SOP (suma mintermow), T = Sigma m(3, 5, 6, 7)
+#    T = Rx'Ry Rz + Rx Ry'Rz + Rx Ry Rz' + Rx Ry Rz
+#
+# 2) POS (iloczyn makstermow), T = Pi M(0, 1, 2, 4)
+#    T = (Rx + Ry + Rz) (Rx + Ry + Rz') (Rx + Ry' + Rz) (Rx' + Ry + Rz)
+#
+# 3) Po uproszczeniu (mapa Karnaugha, trzy pary):
+#    T = Rx Ry + Rx Rz + Ry Rz
+#
+# Przyklady: X=001 Y=100 Z=000 -> Rx=1 Ry=1 Rz=0 -> T=1
+#            X=010 Y=101 Z=110 -> Rx=0 Ry=0 Rz=0 -> T=0
+#
+Rx Ry Rz | T
+~~~~~~~~~~~~~~~~~~
+0 0 0 | 0
+0 0 1 | 0
+0 1 0 | 0
+0 1 1 | 1
+1 0 0 | 0
+1 0 1 | 1
+1 1 0 | 1
+1 1 1 | 1

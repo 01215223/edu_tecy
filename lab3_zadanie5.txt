@@ -1,0 +1,12 @@
+Poniżej treść kolejnego zadania z zestawu zadań dotyczących opisu i tworzenia układów cyfrowych 
+w programie Logisim Evolution 5:
+
+Wyrażenie boolowskie do uproszczenia: 
+f(a, b, c) = a b c' + a b c + ((a + b)(b c')) + (((a' + b')') c)
+Uprość zadane wyrażenie logiczne na kartce do postaci sumy iloczynów stosując własności algebry
+Boole'a. W programie Logisim-evolution utwórz obwód o nazwie zadanie5. 
+W tym obwodzie narysuj schemat funkcji f(...) przed uproszczeniem, o strukturze podanego wyrażenia, 
+oraz schemat f2(...) o strukturze po uproszczeniu. 
+Funkcja f2(...) powinna być zrealizowana z użyciem możliwie jak
+najmniejszej liczby bramek. Sprawdź wyniki w symulacji w programie Logisim-evolution. Możesz
+również sprawdzić wyniki za pomocą tablicy prawdy (nie trzeba jej umieszczać w sprawozdaniu).

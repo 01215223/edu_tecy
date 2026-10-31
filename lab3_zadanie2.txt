@@ -1,0 +1,12 @@
+Poniżej treść kolejnego zadania z zestawu zadań dotyczących opisu i tworzenia układów cyfrowych 
+w programie Logisim Evolution 5:
+
+Utwórz układ o nazwie "input_check". Układ posiada trzy 3-bitowe wejścia X, Y i Z. Układ ma 1-bitowe
+wyjście T. Wyjście T powinno być ustawione na 1 jeżeli na dwóch lub trzech wejściach X, Y, Z jest
+ustawiona jedna z wartości 001,100, 111.
+
+Utwórz obwód o nazwie "bits_check". Obwód ma jedno 3-bitowe wejście A i jednobitowe wyjście R.
+Wyjście R powinno być ustawione w stan 1 jeżeli stanem wejścia A jest 001 lub 100 lub 111.
+Wprowadź trzy podukłady bits_check do układu input_check. Narysuj końcowy schemat
+wykorzystujący zrealizowane podukłady i sprawdź działanie w symulacji.
+Należy napisać na kartce tablice prawdy oraz wyrażenia boolowskie użyte do zaprojektowania schematów.
